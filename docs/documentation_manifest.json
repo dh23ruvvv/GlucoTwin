@@ -10,7 +10,10 @@
     "roles": "Data simulation, ML, dashboard, documentation and demonstration",
     "incubator": "Not applicable",
     "video_url": "paste_link",
-    "github_url": ""
+    "github_url": "",
+    "video_duration_minutes": null,
+    "video_access_verified": false,
+    "eligibility_confirmed": false
   },
   "runtime": {
     "python": "3.14.6",
@@ -21,9 +24,9 @@
   },
   "dependency_count": 47,
   "files": {
-    "docs/architecture.pdf": "2b98213cb4d0c288c4fd3a29678f73661d8b8a186fdbfeddb0dfb15f9c7264b8",
-    "docs/presentation.pdf": "2644006005ab2ec696138293ee13748ed84ca36c6d57ef2df8b1415fa9122376",
-    "README.md": "aac19fdb6843e58498360192edcd114d47fa959f095093ba4edf3f18a244084e",
+    "docs/architecture.pdf": "be38b2818cbaac61b52a320740d3a976165f67f7fa1b5b6d1ad885211af1dc48",
+    "docs/presentation.pdf": "4ab9f766ca7476c42d710c90f7719fecb08e3f0dce642324307db8647f9651f5",
+    "README.md": "9284a495be42b2257c30f0fd6279580d45bed31d4d0cea5279da734e16376c0e",
     "THIRD_PARTY_NOTICES.md": "aadf57dab1b9a871633091cc2a84d7ee64a087b6aaad6f244545055a5bac71e4"
   },
   "pending": [

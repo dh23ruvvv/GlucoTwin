@@ -2,7 +2,7 @@
 
 Synthetic patient twin for next-hour glucose alerts in Type 2 diabetes.
 
-**Status:** Data generator, trained model, chronological evaluation and Streamlit dashboard are implemented. Final submission still requires video access and fresh-clone/public-link checks.
+**Status:** Data generator, trained model, chronological evaluation and Streamlit dashboard are implemented. Follow the final submission checks below before submitting to the organizer.
 
 ## Team and College / Incubator
 
@@ -117,6 +117,10 @@ Regenerate data and retrain together if the config or dependency versions change
 ```
 
 Use a clean project .venv, not a global Python environment, for that snapshot. Same script, seed and dependency versions reproduce generated CSV bytes; rerunning a fixed modeling protocol is reproduction, not permission to tune on test results.
+
+## Final Submission Checks
+
+[Step 7 instructions](docs/STEP7.md) explain team/video confirmations, public GitHub checks and fresh-clone reproduction. Run `preflight.py --source-only` for local technical checks; run `verify_clean_clone.py` after pushing your final public repository, then `preflight.py`. Only the full check can report READY_FOR_MANUAL_SUBMISSION; no script submits to the platform.
 
 ## Doctor Dashboard
 

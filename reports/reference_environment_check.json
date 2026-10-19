@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "test_type": "Isolated clean copy; not the user public GitHub repository",
+  "steps_passed": [
+    "Create a clean virtual environment",
+    "Install all 47 pinned dependencies",
+    "Import dependencies and validate configuration",
+    "Check committed local source artifacts",
+    "Regenerate synthetic data",
+    "Validate both linked streams",
+    "Train fixed baseline and fused models",
+    "Verify causal inference and split boundaries",
+    "Exercise Streamlit widgets and edge cases",
+    "Regenerate README, notices and PDFs",
+    "Check all local artifacts after regeneration",
+    "Streamlit server HTTP health check"
+  ],
+  "runtime": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.8.0",
+    "joblib": "1.5.3"
+  },
+  "dependency_count": 47,
+  "data_hashes_reproduced": true,
+  "max_model_metric_difference": 0.0,
+  "requirements_sha256": "0a2c1391468acbcd92c2f49cf18a6a0b0139b7fb8bb4d10d112ce5d321ca46a9",
+  "limitations": [
+    "Linux reference run, not a Windows execution",
+    "User GitHub URL, public access and video playback not verified"
+  ]
+}

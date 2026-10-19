@@ -405,7 +405,7 @@ def make_readme(info, metrics, quality, demo):
         "then rerun `build_docs.py`. The recording must be at least 20 minutes. No video link has been supplied yet.")
     lines = ["# GlucoTwin", "", "Synthetic patient twin for next-hour glucose alerts in Type 2 diabetes.", "",
              "**Status:** Data generator, trained model, chronological evaluation and Streamlit dashboard are implemented. "
-             "Final submission still requires video access and fresh-clone/public-link checks.", "",
+             "Follow the final submission checks below before submitting to the organizer.", "",
              "## Team and College / Incubator", "",
              f"- Team: **{info['team_name']}**" + (" (working name; editable in project_info.json)" if info["team_name_provisional"] else ""),
              f"- Team leader and sole member: **{info['team_leader']}**", f"- College: **{info['college']}**",
@@ -496,6 +496,11 @@ def make_readme(info, metrics, quality, demo):
               "Use a clean project .venv, not a global Python environment, for that snapshot. "
               "Same script, seed and dependency versions reproduce generated CSV bytes; rerunning a fixed modeling protocol "
               "is reproduction, not permission to tune on test results.", "",
+              "## Final Submission Checks", "",
+              "[Step 7 instructions](docs/STEP7.md) explain team/video confirmations, public GitHub checks and "
+              "fresh-clone reproduction. Run `preflight.py --source-only` for local technical checks; "
+              "run `verify_clean_clone.py` after pushing your final public repository, then `preflight.py`. "
+              "Only the full check can report READY_FOR_MANUAL_SUBMISSION; no script submits to the platform.", "",
               "## Doctor Dashboard", "",
               "1. Select a synthetic patient and inspect baseline EHR.",
               "2. Move Twin time or click Next reading to update patient state and score.",
