@@ -9,8 +9,8 @@
     "team_size": 1,
     "roles": "Data simulation, ML, dashboard, documentation and demonstration",
     "incubator": "Not applicable",
-    "video_url": "paste_link",
-    "github_url": "",
+    "video_url": "",
+    "github_url": "https://github.com/dh23ruvvv/GlucoTwin",
     "video_duration_minutes": null,
     "video_access_verified": false,
     "eligibility_confirmed": false
@@ -24,9 +24,9 @@
   },
   "dependency_count": 47,
   "files": {
-    "docs/architecture.pdf": "be38b2818cbaac61b52a320740d3a976165f67f7fa1b5b6d1ad885211af1dc48",
-    "docs/presentation.pdf": "4ab9f766ca7476c42d710c90f7719fecb08e3f0dce642324307db8647f9651f5",
-    "README.md": "9284a495be42b2257c30f0fd6279580d45bed31d4d0cea5279da734e16376c0e",
+    "docs/architecture.pdf": "c58158961a98bce5bfd8a16620efd35e38cd85dd3d2d1dc859aa61f7e03dd5f3",
+    "docs/presentation.pdf": "93e2ac241c927f789744c320d6073604a9ec0415ed1f522f0750fdc42c42930c",
+    "README.md": "ba6e3052133ef831b447123de4682edc258d2989c8d3b0e6d09fb02c40f17301",
     "THIRD_PARTY_NOTICES.md": "aadf57dab1b9a871633091cc2a84d7ee64a087b6aaad6f244545055a5bac71e4"
   },
   "pending": [

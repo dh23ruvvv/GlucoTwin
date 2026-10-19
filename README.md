@@ -135,9 +135,7 @@ Use a clean project .venv, not a global Python environment, for that snapshot. S
 
 ## Demonstration Video - Minimum 20 Minutes
 
-[Watch the demonstration video](paste_link)
-
-Required duration: at least 20 minutes. Verify actual duration and signed-out access.
+**REQUIRED BEFORE SUBMISSION:** Add your accessible recording URL to `project_info.json` under `video_url`, then rerun `build_docs.py`. The recording must be at least 20 minutes. No video link has been supplied yet.
 
 ## Presentation
 
@@ -173,7 +171,7 @@ Evaluate unseen patients, realistic missingness, calibration and episode-level a
 - [x] MIT license and dependency metadata/notices
 - [ ] Confirm final team name and official repository naming convention
 - [ ] Verify full-time-student eligibility and any incubator information
-- [ ] Verify linked recording duration and signed-out playback
+- [ ] Add and verify a recording of at least 20 minutes
 - [ ] Test from a fresh clone and clean environment
 - [ ] Verify public repository, PDFs and all links while signed out
 - [ ] Submit leader name, phone, email and GitHub URL; retain confirmation
