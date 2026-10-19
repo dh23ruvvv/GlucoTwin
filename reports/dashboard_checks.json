@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "checks": [
+    "Dashboard loads with EHR, model inference and no future observations visible",
+    "Time navigation advances one reading and matches shared saved-model inference",
+    "Revealing follow-up leaves the prediction unchanged; navigation hides follow-up again",
+    "Alert and below-cutoff paths both render using validation examples",
+    "Already-above-threshold state withholds new-onset risk rather than displaying zero",
+    "Patient switching updates the twin and resets retrospective reveal",
+    "End-of-data state reports unavailable follow-up without manufacturing an outcome",
+    "Previous and reset controls restore the expected time and hide follow-up"
+  ],
+  "validation_demo_cases": [
+    {
+      "case": "Prototype alert",
+      "patient_id": "SYN_0001",
+      "as_of": "2026-01-15T14:30:00",
+      "risk_score": 0.543795140131786
+    },
+    {
+      "case": "Below cutoff",
+      "patient_id": "SYN_0001",
+      "as_of": "2026-01-14T02:00:00",
+      "risk_score": 0.000252870640705441
+    },
+    {
+      "case": "Already above threshold",
+      "patient_id": "SYN_0001",
+      "as_of": "2026-01-14T19:30:00",
+      "risk_score": null
+    }
+  ],
+  "note": "UI and software checks, not clinical validation. Cases selected without using future labels."
+}
