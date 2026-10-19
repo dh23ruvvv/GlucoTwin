@@ -1,0 +1,35 @@
+{
+  "status": "BUILT",
+  "team": {
+    "project_title": "GlucoTwin",
+    "team_name": "GlucoTwin",
+    "team_name_provisional": true,
+    "college": "IIT Kanpur",
+    "team_leader": "Anusha Gupta",
+    "team_size": 1,
+    "roles": "Data simulation, ML, dashboard, documentation and demonstration",
+    "incubator": "Not applicable",
+    "video_url": "paste_link",
+    "github_url": ""
+  },
+  "runtime": {
+    "python": "3.14.6",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0"
+  },
+  "dependency_count": 47,
+  "files": {
+    "docs/architecture.pdf": "2b98213cb4d0c288c4fd3a29678f73661d8b8a186fdbfeddb0dfb15f9c7264b8",
+    "docs/presentation.pdf": "2644006005ab2ec696138293ee13748ed84ca36c6d57ef2df8b1415fa9122376",
+    "README.md": "aac19fdb6843e58498360192edcd114d47fa959f095093ba4edf3f18a244084e",
+    "THIRD_PARTY_NOTICES.md": "aadf57dab1b9a871633091cc2a84d7ee64a087b6aaad6f244545055a5bac71e4"
+  },
+  "pending": [
+    "Confirm working team name",
+    "Verify video duration and signed-out access",
+    "Complete fresh-clone and public-link checks",
+    "Verify eligibility and incubator details"
+  ]
+}
