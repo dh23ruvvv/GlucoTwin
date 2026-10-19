@@ -1,0 +1,15 @@
+{
+  "project_title": "GlucoTwin",
+  "seed": 42,
+  "n_patients": 80,
+  "n_days": 21,
+  "start_date": "2026-01-01",
+  "sampling_minutes": 15,
+  "prediction_stride_minutes": 30,
+  "lookback_minutes": 120,
+  "prediction_horizon_minutes": 60,
+  "event_threshold_mg_dl": 180,
+  "train_days": 13,
+  "validation_days": 4,
+  "test_days": 4
+}
