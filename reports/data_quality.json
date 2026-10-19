@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "ehr_rows": 80,
+  "cgm_rows": 161280,
+  "n_patients": 80,
+  "samples_per_patient": 2016,
+  "glucose_summary_mg_dl": {
+    "minimum": 65.0,
+    "median": 127.5,
+    "maximum": 259.8
+  },
+  "checks": [
+    "schemas",
+    "synthetic IDs",
+    "linked patients",
+    "no missing values",
+    "unique keys",
+    "baseline predates stream",
+    "value bounds",
+    "regular timestamps",
+    "config and checksum integrity",
+    "complete split windows",
+    "both target classes"
+  ],
+  "target": "Current glucose < 180; any reading >= 180 in next 60 minutes",
+  "splits": {
+    "train": {
+      "start_inclusive": "2026-01-01T00:00:00",
+      "end_exclusive": "2026-01-14T00:00:00",
+      "candidate_windows": 49440,
+      "eligible_windows": 47339,
+      "event_windows": 1657,
+      "non_event_windows": 45682,
+      "event_prevalence": 0.035003,
+      "boundary_rule": "Full history and future horizon are inside this split"
+    },
+    "validation": {
+      "start_inclusive": "2026-01-14T00:00:00",
+      "end_exclusive": "2026-01-18T00:00:00",
+      "candidate_windows": 14880,
+      "eligible_windows": 14209,
+      "event_windows": 514,
+      "non_event_windows": 13695,
+      "event_prevalence": 0.036174,
+      "boundary_rule": "Full history and future horizon are inside this split"
+    },
+    "test": {
+      "start_inclusive": "2026-01-18T00:00:00",
+      "end_exclusive": "2026-01-22T00:00:00",
+      "candidate_windows": 14880,
+      "eligible_windows": 14258,
+      "event_windows": 468,
+      "non_event_windows": 13790,
+      "event_prevalence": 0.032824,
+      "boundary_rule": "Full history and future horizon are inside this split"
+    }
+  },
+  "note": "Data integrity and target counts only; not model performance or clinical validation."
+}

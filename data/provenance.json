@@ -1,0 +1,51 @@
+{
+  "dataset_name": "GlucoTwin synthetic demonstration data (project-generated)",
+  "generator_version": "1.0",
+  "generator_sha256": "95687bb84ec7886350cea377d4ba631527afc4f50a0628b95b74ee4a38f39bfd",
+  "source": "Generated entirely by generate_data.py; no external dataset or real records",
+  "license": "MIT; see repository LICENSE and data/DATA_LICENSE.md",
+  "timezone": "Asia/Kolkata; timestamps stored as local time without an offset",
+  "units": {
+    "glucose_mg_dl": "mg/dL",
+    "hba1c_percent": "%",
+    "bmi_kg_m2": "kg/m^2"
+  },
+  "config": {
+    "project_title": "GlucoTwin",
+    "seed": 42,
+    "n_patients": 80,
+    "n_days": 21,
+    "start_date": "2026-01-01",
+    "sampling_minutes": 15,
+    "prediction_stride_minutes": 30,
+    "lookback_minutes": 120,
+    "prediction_horizon_minutes": 60,
+    "event_threshold_mg_dl": 180,
+    "train_days": 13,
+    "validation_days": 4,
+    "test_days": 4
+  },
+  "runtime": {
+    "python": "3.14.6",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6"
+  },
+  "files": {
+    "ehr.csv": {
+      "rows": 80,
+      "sha256": "b712aeb0a508dde1c3ad9ce1b08bd77a8e70778e5d138a469dd3f5c37ca6efef"
+    },
+    "cgm.csv": {
+      "rows": 161280,
+      "sha256": "b849431d37989e362a200ac84ba029817848406c509017c3db35e2c24fb98c4f"
+    }
+  },
+  "limitations": [
+    "Illustrative stochastic rules; not physiological calibration or an Indian population sample",
+    "Baseline EHR generated before CGM; HbA1c is not calculated from future CGM",
+    "Meal timing, severity and other hidden simulator factors are not exported",
+    "Complete regular CGM; no missingness, device dropout or treatment policy simulation",
+    "Binary simulated sex categories are a simplification, not population representation",
+    "Synthetic event labels do not establish clinical validity or legal compliance"
+  ]
+}
