@@ -1,0 +1,273 @@
+{
+  "status": "TRAINED_AND_EVALUATED",
+  "main_model": "fused_hgb",
+  "runtime": {
+    "python": "3.14.6",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0"
+  },
+  "protocol": {
+    "main_model_chosen_before_test": "fused_hgb",
+    "config": {
+      "project_title": "GlucoTwin",
+      "seed": 42,
+      "n_patients": 80,
+      "n_days": 21,
+      "start_date": "2026-01-01",
+      "sampling_minutes": 15,
+      "prediction_stride_minutes": 30,
+      "lookback_minutes": 120,
+      "prediction_horizon_minutes": 60,
+      "event_threshold_mg_dl": 180,
+      "train_days": 13,
+      "validation_days": 4,
+      "test_days": 4
+    },
+    "feature_version": "1.0",
+    "feature_groups": {
+      "dynamic": [
+        "glucose_current",
+        "glucose_lag_30m",
+        "glucose_lag_60m",
+        "glucose_lag_120m",
+        "glucose_mean_2h",
+        "glucose_std_2h",
+        "glucose_min_2h",
+        "glucose_max_2h",
+        "glucose_slope_30m",
+        "glucose_delta_2h",
+        "hour_sin",
+        "hour_cos"
+      ],
+      "ehr": [
+        "age_years",
+        "sex_female",
+        "bmi_kg_m2",
+        "hypertension",
+        "diabetes_duration_years",
+        "hba1c_percent"
+      ]
+    },
+    "boosting_settings": {
+      "learning_rate": 0.08,
+      "max_iter": 120,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 30,
+      "l2_regularization": 2.0,
+      "early_stopping": false,
+      "categorical_features": null,
+      "random_state": 42
+    },
+    "baseline_settings": {
+      "estimator": "StandardScaler + LogisticRegression",
+      "max_iter": 1000,
+      "random_state": 42
+    },
+    "threshold_rule": "Maximum validation window F1; exact ties choose higher threshold",
+    "thread_limit": 4,
+    "no_test_tuning": true
+  },
+  "split_counts": {
+    "train": {
+      "start_inclusive": "2026-01-01T00:00:00",
+      "end_exclusive": "2026-01-14T00:00:00",
+      "candidate_windows": 49440,
+      "eligible_windows": 47339,
+      "event_windows": 1657,
+      "non_event_windows": 45682,
+      "event_prevalence": 0.035003,
+      "boundary_rule": "Full history and future horizon are inside this split"
+    },
+    "validation": {
+      "start_inclusive": "2026-01-14T00:00:00",
+      "end_exclusive": "2026-01-18T00:00:00",
+      "candidate_windows": 14880,
+      "eligible_windows": 14209,
+      "event_windows": 514,
+      "non_event_windows": 13695,
+      "event_prevalence": 0.036174,
+      "boundary_rule": "Full history and future horizon are inside this split"
+    },
+    "test": {
+      "start_inclusive": "2026-01-18T00:00:00",
+      "end_exclusive": "2026-01-22T00:00:00",
+      "candidate_windows": 14880,
+      "eligible_windows": 14258,
+      "event_windows": 468,
+      "non_event_windows": 13790,
+      "event_prevalence": 0.032824,
+      "boundary_rule": "Full history and future horizon are inside this split"
+    }
+  },
+  "models": {
+    "baseline_current_glucose": {
+      "features": [
+        "glucose_current"
+      ],
+      "validation": {
+        "n_windows": 14209,
+        "n_events": 514,
+        "event_prevalence": 0.03617425575339574,
+        "threshold": 0.10582709619823917,
+        "roc_auc": 0.7592518641953736,
+        "average_precision": 0.11510877167055926,
+        "precision": 0.1388888888888889,
+        "recall": 0.24319066147859922,
+        "f1": 0.1768033946251768,
+        "brier_score": 0.03360804339094388,
+        "alert_fraction": 0.0633401365331832,
+        "confusion_matrix": {
+          "tn": 12920,
+          "fp": 775,
+          "fn": 389,
+          "tp": 125
+        }
+      },
+      "test": {
+        "n_windows": 14258,
+        "n_events": 468,
+        "event_prevalence": 0.03282367793519428,
+        "threshold": 0.10582709619823917,
+        "roc_auc": 0.7583765642141276,
+        "average_precision": 0.10210678214766385,
+        "precision": 0.117519042437432,
+        "recall": 0.23076923076923078,
+        "f1": 0.15573179524152847,
+        "brier_score": 0.030770959822692786,
+        "alert_fraction": 0.06445504278299902,
+        "confusion_matrix": {
+          "tn": 12979,
+          "fp": 811,
+          "fn": 360,
+          "tp": 108
+        }
+      }
+    },
+    "wearable_only_hgb": {
+      "features": [
+        "glucose_current",
+        "glucose_lag_30m",
+        "glucose_lag_60m",
+        "glucose_lag_120m",
+        "glucose_mean_2h",
+        "glucose_std_2h",
+        "glucose_min_2h",
+        "glucose_max_2h",
+        "glucose_slope_30m",
+        "glucose_delta_2h",
+        "hour_sin",
+        "hour_cos"
+      ],
+      "validation": {
+        "n_windows": 14209,
+        "n_events": 514,
+        "event_prevalence": 0.03617425575339574,
+        "threshold": 0.24602748124564383,
+        "roc_auc": 0.9539446075778175,
+        "average_precision": 0.509154042391581,
+        "precision": 0.4755700325732899,
+        "recall": 0.5680933852140078,
+        "f1": 0.5177304964539007,
+        "brier_score": 0.023814371000845585,
+        "alert_fraction": 0.0432120487015272,
+        "confusion_matrix": {
+          "tn": 13373,
+          "fp": 322,
+          "fn": 222,
+          "tp": 292
+        }
+      },
+      "test": {
+        "n_windows": 14258,
+        "n_events": 468,
+        "event_prevalence": 0.03282367793519428,
+        "threshold": 0.24602748124564383,
+        "roc_auc": 0.9537174683748288,
+        "average_precision": 0.4664541684455689,
+        "precision": 0.4242928452579035,
+        "recall": 0.5448717948717948,
+        "f1": 0.47708138447146864,
+        "brier_score": 0.02270946582766048,
+        "alert_fraction": 0.04215177444241829,
+        "confusion_matrix": {
+          "tn": 13444,
+          "fp": 346,
+          "fn": 213,
+          "tp": 255
+        }
+      }
+    },
+    "fused_hgb": {
+      "features": [
+        "glucose_current",
+        "glucose_lag_30m",
+        "glucose_lag_60m",
+        "glucose_lag_120m",
+        "glucose_mean_2h",
+        "glucose_std_2h",
+        "glucose_min_2h",
+        "glucose_max_2h",
+        "glucose_slope_30m",
+        "glucose_delta_2h",
+        "hour_sin",
+        "hour_cos",
+        "age_years",
+        "sex_female",
+        "bmi_kg_m2",
+        "hypertension",
+        "diabetes_duration_years",
+        "hba1c_percent"
+      ],
+      "validation": {
+        "n_windows": 14209,
+        "n_events": 514,
+        "event_prevalence": 0.03617425575339574,
+        "threshold": 0.297773159045234,
+        "roc_auc": 0.9627169448931204,
+        "average_precision": 0.557967836664357,
+        "precision": 0.5524752475247525,
+        "recall": 0.5428015564202334,
+        "f1": 0.5475956820412169,
+        "brier_score": 0.022491497017979853,
+        "alert_fraction": 0.035540854388063904,
+        "confusion_matrix": {
+          "tn": 13469,
+          "fp": 226,
+          "fn": 235,
+          "tp": 279
+        }
+      },
+      "test": {
+        "n_windows": 14258,
+        "n_events": 468,
+        "event_prevalence": 0.03282367793519428,
+        "threshold": 0.297773159045234,
+        "roc_auc": 0.9624231451008101,
+        "average_precision": 0.502281838039413,
+        "precision": 0.4562043795620438,
+        "recall": 0.5341880341880342,
+        "f1": 0.4921259842519685,
+        "brier_score": 0.021707199249192236,
+        "alert_fraction": 0.038434563052321506,
+        "confusion_matrix": {
+          "tn": 13492,
+          "fp": 298,
+          "fn": 218,
+          "tp": 250
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Fully synthetic data; good metrics do not imply clinical validity or Indian population representativeness.",
+    "Train and test include the same patients at different times; unseen-patient generalization is untested.",
+    "Overlapping prediction windows and repeated patients are correlated; counts are not independent clinical events.",
+    "Window recall is not episode-level recall, and repeated alerts are not deduplicated.",
+    "EHR-CGM associations are engineered simulator assumptions, not established biological effect estimates.",
+    "Complete regular CGM omits realistic dropout, missingness, treatment changes and device bias.",
+    "F1 threshold selection does not represent clinical costs, safe alert burden or a treatment policy.",
+    "Probabilities are not independently calibrated; no diagnosis, treatment or medication advice is provided."
+  ]
+}

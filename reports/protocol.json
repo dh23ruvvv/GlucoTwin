@@ -1,0 +1,61 @@
+{
+  "main_model_chosen_before_test": "fused_hgb",
+  "config": {
+    "project_title": "GlucoTwin",
+    "seed": 42,
+    "n_patients": 80,
+    "n_days": 21,
+    "start_date": "2026-01-01",
+    "sampling_minutes": 15,
+    "prediction_stride_minutes": 30,
+    "lookback_minutes": 120,
+    "prediction_horizon_minutes": 60,
+    "event_threshold_mg_dl": 180,
+    "train_days": 13,
+    "validation_days": 4,
+    "test_days": 4
+  },
+  "feature_version": "1.0",
+  "feature_groups": {
+    "dynamic": [
+      "glucose_current",
+      "glucose_lag_30m",
+      "glucose_lag_60m",
+      "glucose_lag_120m",
+      "glucose_mean_2h",
+      "glucose_std_2h",
+      "glucose_min_2h",
+      "glucose_max_2h",
+      "glucose_slope_30m",
+      "glucose_delta_2h",
+      "hour_sin",
+      "hour_cos"
+    ],
+    "ehr": [
+      "age_years",
+      "sex_female",
+      "bmi_kg_m2",
+      "hypertension",
+      "diabetes_duration_years",
+      "hba1c_percent"
+    ]
+  },
+  "boosting_settings": {
+    "learning_rate": 0.08,
+    "max_iter": 120,
+    "max_leaf_nodes": 15,
+    "min_samples_leaf": 30,
+    "l2_regularization": 2.0,
+    "early_stopping": false,
+    "categorical_features": null,
+    "random_state": 42
+  },
+  "baseline_settings": {
+    "estimator": "StandardScaler + LogisticRegression",
+    "max_iter": 1000,
+    "random_state": 42
+  },
+  "threshold_rule": "Maximum validation window F1; exact ties choose higher threshold",
+  "thread_limit": 4,
+  "no_test_tuning": true
+}

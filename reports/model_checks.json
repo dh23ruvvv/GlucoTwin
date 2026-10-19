@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "checks": [
+    "Saved estimator ingests all 18 intended dynamic and static features; no labels or IDs",
+    "All history and label windows stay wholly within chronological splits",
+    "Training features equal replay features at sampled anchors in all splits",
+    "Changing or removing all future readings leaves prediction inputs unchanged",
+    "Sampled targets equal the observed next-hour event, excluding current glucose",
+    "Saved-model inference ignores future values; available input changes update twin features"
+  ],
+  "example_prediction": {
+    "patient_id": "SYN_0001",
+    "as_of": "2026-01-14T02:00:00",
+    "current_glucose_mg_dl": 130.1,
+    "eligible_for_incident_event_prediction": true,
+    "prediction_horizon_minutes": 60,
+    "risk_score": 0.000252870640705441,
+    "alert_threshold": 0.297773159045234,
+    "alert": false,
+    "status": "Below prototype alert threshold",
+    "note": "Synthetic prototype; score is not clinically calibrated or treatment advice"
+  },
+  "note": "Software and leakage checks only; not clinical validation"
+}
